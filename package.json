@@ -1,0 +1,28 @@
+{
+  "name": "tvshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dreadlocker/tvShop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.13",
+    "morgan": "^1.9.1",
+    "nodemon": "1.18.10"
+  },
+  "bugs": {
+    "url": "https://github.com/dreadlocker/tvShop/issues"
+  },
+  "homepage": "https://github.com/dreadlocker/tvShop#readme"
+}
