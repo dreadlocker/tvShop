@@ -1,14 +1,14 @@
 <template>
-  <Home/>
+  <Store/>
 </template>
 
 <script>
-import Home from '@/components/Home.vue'
+import Store from '@/components/Store.vue'
 
 export default {
   name: 'home',
   components: {
-    Home
+    Store
   }
 }
 </script>

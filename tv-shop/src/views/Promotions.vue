@@ -1,14 +1,14 @@
 <template>
-  <About/>
+  <Promotions/>
 </template>
 
 <script>
-import About from '@/components/About.vue'
+import Promotions from '@/components/Promotions.vue'
 
 export default {
   name: 'home',
   components: {
-    About
+    Promotions
   }
 }
 </script>
