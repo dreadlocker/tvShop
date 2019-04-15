@@ -15,6 +15,6 @@ app.use(cors());
 app.options('*', cors()); //@ include before other routes
 app.use(morgan('dev'));
 
-require('./routes/tv')(app);  //@ TV routes
+require('./routes/tvs')(app);  //@ TV routes
 
-app.listen(port, () => console.loog(`Server running on port ${port}`));
+app.listen(port, () => console.log(`Server running on port ${port}`));
