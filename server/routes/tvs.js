@@ -1,49 +1,33 @@
 const mongoose = require('mongoose');
 const Tv = mongoose.model('Tv');
+let allTvs = [];
 
 
 module.exports = app => {
     app.get('/tvs', (req, res) => {
 
         Tv.find({})
-          .sort({id: 1})
-          .then((tv) => {
-              res.send({
-                  tvs: tv
-              })
-          });
+            .sort({
+                id: 1
+            })
+            .then((tv) => {
+                res.send({
+                    tvs: tv
+                })
+            });
     });
 
     app.post('/tvs', (req, res) => {
-        let checked = req.body.checked;
-        let foundedTvs;
-        let allTvs = [];
+        let checked = req.body.checked.join('|');
 
-      
-
-        checked.map(check => {
-            if(checked){
-                foundedTvs =
-                    Tv.find({})
-                      .where('model')
-                      .regex(new RegExp(check, 'i'))
-                      .then(tv => {
-                          allTvs.push(tv)
-                      });
-            }
-        });
-
-        allTvs.map(tvs => {
-            // res.send({
-            //     tvs: tvs
-            // })
-            console.log(tvs)
-        })
-        // console.log(allTvs)
-
-      
-
-
-        // console.log()
+        Tv.find({})
+            .where('model')
+            .regex(new RegExp(checked, 'i'))
+            .then((tvs) => {
+                console.log(tvs)
+                res.send({
+                    tvs: tvs
+                })
+            })
     });
 }
