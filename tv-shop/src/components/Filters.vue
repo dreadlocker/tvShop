@@ -2,19 +2,19 @@
   <div class="sideNav">
     <BrandFilter/>
     <hr>
-    <InchFilter/>
+    <InchesFilter/>
   </div>
 </template>
 
 <script>
 import BrandFilter from "./BrandFilter";
-import InchFilter from "./InchFilter";
+import InchesFilter from "./InchesFilter";
 
 export default {
   name: "Filters",
   components: {
     BrandFilter,
-    InchFilter
+    InchesFilter
   }
 };
 </script>

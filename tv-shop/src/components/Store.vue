@@ -44,7 +44,7 @@ export default {
   border: 1px solid green;
 }
 .singleTv {
-  margin: 0;
+  margin: 0.2rem;
   padding: 0;
   border: 1px solid #cdcdcd;
   width: 32%;
