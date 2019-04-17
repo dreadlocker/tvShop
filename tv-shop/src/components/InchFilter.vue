@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>МАРКА:</p>
+    <p>Инчове:</p>
     <hr>
     <p class="right" v-for="name in namesArr" :key="name">
       <input v-model="checkedNames" type="checkbox" :value="name">
@@ -18,7 +18,7 @@ export default {
   name: "BrandFilter",
   data() {
     return {
-      namesArr: ["VORTEX", "NEO", "LG", "SAMSUNG", "SONY", "PHILIPS"],
+      namesArr: [32, 40, 43, 50, 55, 65],
       checkedNames: []
     };
   },

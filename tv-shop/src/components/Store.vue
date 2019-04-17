@@ -1,6 +1,6 @@
 <template>
   <div class="store">
-    <BrandFilter/>
+    <Filters/>
     <div class="tvWrapper">
       <div v-for="tvObj in tvs_arr" :key="tvObj.id" class="singleTv">
         <h3>{{tvObj.model}}</h3>
@@ -14,12 +14,12 @@
 import { mapActions, mapState } from "vuex";
 import { ACTION_TVS_ARR } from "../Vuex/types.js";
 import axios from "axios";
-import BrandFilter from "./BrandFilter";
+import Filters from "./Filters";
 
 export default {
   name: "Store",
   components: {
-    BrandFilter
+    Filters
   },
   computed: {
     ...mapState({
