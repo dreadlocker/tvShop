@@ -16,11 +16,11 @@ import { ACTION_TVS_ARR } from "../Vuex/types.js";
 import axios from "axios";
 import BrandFilter from "./BrandFilter";
 // import * as requests from "../helper/requests.js";
-import  requests  from "../mixins/requests.js";
+// import  requests  from "../mixins/requests.js";
 
 export default {
   name: "Store",
-  mixins: [requests],
+  // mixins: [requests],
   components: {
     BrandFilter
   },
@@ -36,11 +36,11 @@ export default {
       tvs_arr: state => state.tvsArr
     })
   },
-  // methods: {
-  //   ...mapActions({
-  //     tvs_arr_action: ACTION_TVS_ARR
-  //   })
-  // },
+  methods: {
+    ...mapActions({
+      tvs_arr_action: ACTION_TVS_ARR
+    })
+  },
   mounted() {
       // console.log(this.$requestHelper.getTvs());
       // this.getRequest().then((res) => {
@@ -50,15 +50,15 @@ export default {
       // console.log(this.getRequest());
     // this.$requestHelper.getTvs().then(res => console.log(res));
     // console.log(requests);
-    // axios
-    //   .get("http://10.10.0.227:5432/tvs")
-    //   .then(response => {
-    //     // this.tvsArr = response.data.tvs;
-    //     this.tvs_arr_action(response.data.tvs);
-    //   })
-    //   .catch(error => {
-    //     console.log(error);
-    //   });
+    axios
+      .get("http://10.10.0.227:5432/tvs")
+      .then(response => {
+        // this.tvsArr = response.data.tvs;
+        this.tvs_arr_action(response.data.tvs);
+      })
+      .catch(error => {
+        console.log(error);
+      });
   },
   // mounted() {
   // console.log(this.tvsArr);
