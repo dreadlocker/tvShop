@@ -37,6 +37,7 @@ export default new Router({
       name: 'errorPage',
       component: ErrorPage
     },
+    // FIX da se pra6ta ot BackEnd
     {
       path: '*',
       name: 'toErrorPage',
