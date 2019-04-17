@@ -1,29 +1,44 @@
 <template>
-  <div class="hello">
-    <h1>SOME ANIMATION</h1>
+  <div class="home">
+    <h1>Welcome to our store</h1>
+    <div>
+      <img :src="src">
+    </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'Home',
-}
-</script>
+// import { clearInterval } from 'timers';
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
+export default {
+  name: "Home",
+  data() {
+    return {
+      // FIX da se vzeme ot masiv sus TV ot Vuex
+      images: [
+        "http://cdn.technomarket.bg/../media/cache/my_thumb/uploads/library/product/09162237/5b2b8077d63f2.jpeg",
+        "http://cdn.technomarket.bg/../media/cache/my_thumb/uploads/library/product/09167453/5b891bad510d2.jpg",
+        "http://cdn.technomarket.bg/../media/cache/my_thumb/uploads/library/product/09169564/5c0f72dd94266.jpg",
+        "http://cdn.technomarket.bg/../media/cache/my_thumb/uploads/library/product/09165592/5b557f96b01e1.jpg",
+        "http://cdn.technomarket.bg/../media/cache/my_thumb/uploads/library/product/09164613/5af143c0e00f7.jpeg"
+      ],
+      randomIndex: 0,
+      interval: 0,
+      src: 0
+    };
+  },
+  mounted() {
+    this.randomIndex = Math.round(Math.random() * (this.images.length - 1));
+    this.src = this.images[this.randomIndex];
+
+    this.interval = setInterval(() => {
+      this.randomIndex = Math.round(Math.random() * (this.images.length - 1));
+      this.src = this.images[this.randomIndex];
+    }, 2000);
+  },
+  beforeDestroy() {
+    // FIX mai ne ni trqbva clearInterval()
+    this.interval = clearInterval(this.interval);
+  }
+};
+</script>
