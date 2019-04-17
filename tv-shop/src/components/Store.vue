@@ -26,17 +26,7 @@ export default {
       tvs_arr: state => state.tvsArr
     })
   },
-  methods: {
-    ...mapActions({
-      tvs_arr_action: ACTION_TVS_ARR
-    })
-  },
-  mounted() {
-    axios
-      .get("http://10.10.0.227:5432/tvs")
-      .then(response => this.tvs_arr_action(response.data.tvs))
-      .catch(error => console.log(error));
-  }
+ 
 };
 </script>
 
