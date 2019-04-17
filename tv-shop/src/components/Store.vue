@@ -1,12 +1,7 @@
 <template>
   <div class="store">
     <Filters/>
-    <div class="tvWrapper">
-      <div v-for="tvObj in tvs_arr" :key="tvObj.id" class="singleTv">
-        <h3>{{tvObj.model}}</h3>
-        <img :src="tvObj.image">
-      </div>
-    </div>
+    <SingleTV/>
   </div>
 </template>
 
@@ -15,18 +10,19 @@ import { mapActions, mapState } from "vuex";
 import { ACTION_TVS_ARR } from "../Vuex/types.js";
 import axios from "axios";
 import Filters from "./Filters";
+import SingleTV from "./SingleTV";
 
 export default {
   name: "Store",
   components: {
-    Filters
+    Filters,
+    SingleTV
   },
   computed: {
     ...mapState({
       tvs_arr: state => state.tvsArr
     })
-  },
- 
+  }
 };
 </script>
 
@@ -34,14 +30,6 @@ export default {
 .store {
   display: flex;
   justify-content: space-between;
-}
-.tvWrapper {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  min-width: 200px;
-  width: 90%;
-  border: 1px solid green;
 }
 .singleTv {
   margin: 0.2rem;
