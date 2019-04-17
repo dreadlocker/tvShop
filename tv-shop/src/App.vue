@@ -1,15 +1,19 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>|
-      <router-link to="/store">Store</router-link>|
-      <router-link to="/promotions">Promotions</router-link>|
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <Skeleton/>
   </div>
 </template>
 
+<script>
+import Skeleton from "./components/Skeleton";
+
+export default {
+  name: "App",
+  components: {
+    Skeleton
+  }
+};
+</script>
 
 <style lang="scss">
 html,
@@ -18,11 +22,6 @@ p {
   margin: 0;
   padding: 0;
 }
-html,
-body,
-#app {
-  // height: 100%;
-}
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -30,16 +29,5 @@ body,
   text-align: center;
   color: #2c3e50;
   // margin: 0.5rem;
-}
-#nav {
-  // height: 2%;
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
 }
 </style>
