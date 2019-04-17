@@ -6,24 +6,17 @@
       <router-link to="/promotions">Promotions</router-link>|
       <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
+    <router-view v-if="tvs_arr.length > 0"/>
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import { mapActions, mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 import { ACTION_TVS_ARR } from "../Vuex/types.js";
 
 export default {
-  name: "Home",
-  data() {
-    return {
-      randomIndex: 0,
-      interval: 0,
-      src: 0
-    };
-  },
+  name: "Skeleton",
   computed: {
     ...mapState({
       tvs_arr: state => state.tvsArr
@@ -32,26 +25,13 @@ export default {
   methods: {
     ...mapActions({
       tvs_arr_action: ACTION_TVS_ARR
-    }),
-    renderAnimation(tvs) {
-      this.randomIndex = Math.round(Math.random() * (tvs.length - 1));
-      this.src = tvs[this.randomIndex].image;
-
-      this.interval = setInterval(() => {
-        this.randomIndex = Math.round(Math.random() * (tvs.length - 1));
-        this.src = tvs[this.randomIndex].image;
-      }, 2000);
-    }
+    })
   },
   mounted() {
     axios
       .get("http://10.10.0.227:5432/tvs")
       .then(res => this.tvs_arr_action(res.data.tvs))
-      .then(() => this.renderAnimation(this.tvs_arr))
       .catch(err => console.log(err));
-  },
-  beforeDestroy() {
-    this.interval = clearInterval(this.interval);
   }
 };
 </script>

@@ -9,8 +9,7 @@
 
 <script>
 import axios from "axios";
-import { mapActions, mapState } from "vuex";
-import { ACTION_TVS_ARR } from "../Vuex/types.js";
+import { mapState } from "vuex";
 
 export default {
   name: "Home",
@@ -27,25 +26,18 @@ export default {
     })
   },
   methods: {
-    ...mapActions({
-      tvs_arr_action: ACTION_TVS_ARR
-    }),
-    renderAnimation(tvs) {
-      this.randomIndex = Math.round(Math.random() * (tvs.length - 1));
-      this.src = tvs[this.randomIndex].image;
+    renderAnimation() {
+      this.randomIndex = Math.round(Math.random() * (this.tvs_arr.length - 1));
+      this.src = this.tvs_arr[this.randomIndex].image;
       
       this.interval = setInterval(() => {
-        this.randomIndex = Math.round(Math.random() * (tvs.length - 1));
-        this.src = tvs[this.randomIndex].image;
+        this.randomIndex = Math.round(Math.random() * (this.tvs_arr.length - 1));
+        this.src = this.tvs_arr[this.randomIndex].image;
       }, 2000);
     }
   },
   mounted() {
-    axios
-      .get("http://10.10.0.227:5432/tvs")
-      .then(res => this.tvs_arr_action(res.data.tvs))
-      .then(() => this.renderAnimation(this.tvs_arr))
-      .catch(err => console.log(err));
+    this.renderAnimation()
   },
   beforeDestroy() {
     this.interval = clearInterval(this.interval);
