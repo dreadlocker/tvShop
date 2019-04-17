@@ -8,8 +8,6 @@
 </template>
 
 <script>
-// import { clearInterval } from 'timers';
-
 export default {
   name: "Home",
   data() {
@@ -37,8 +35,30 @@ export default {
     }, 2000);
   },
   beforeDestroy() {
-    // FIX mai ne ni trqbva clearInterval()
     this.interval = clearInterval(this.interval);
   }
 };
 </script>
+
+<style lang="scss" scoped>
+img {
+  animation: showHideImage 2000ms infinite;
+}
+@keyframes showHideImage {
+  0% {
+    transform: scale(0);
+  }
+  25% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+</style>
