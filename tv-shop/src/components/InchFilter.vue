@@ -33,9 +33,9 @@ export default {
     })
   },
   watch: {
-    checkedNames: function(checked) {
+    checkedNames: function(inches) {
       axios
-        .post("http://10.10.0.227:5432/tvs", { checked })
+        .post("http://10.10.0.227:5432/tvs", { inches })
         .then(response => this.tvs_arr_action(response.data.tvs))
         .catch(error => console.log(error));
     }
