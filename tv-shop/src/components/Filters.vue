@@ -1,20 +1,21 @@
 <template>
   <div class="sideNav">
-    <BrandFilter/>
-    <hr>
-    <InchFilter/>
+      <BrandFilter/>
+      <hr>
+      <!-- FIX later -->
+      <!-- <InchesFilter/> -->
   </div>
 </template>
 
 <script>
 import BrandFilter from "./BrandFilter";
-import InchFilter from "./InchFilter";
+import InchesFilter from "./InchesFilter";
 
 export default {
   name: "Filters",
   components: {
     BrandFilter,
-    InchFilter
+    InchesFilter
   }
 };
 </script>
@@ -22,6 +23,6 @@ export default {
 <style lang="scss" scoped>
 .sideNav {
   width: 7rem;
-  border: 1px solid red;
+  border-right: 2px solid #cdcdcd;
 }
 </style>

@@ -6,7 +6,7 @@
 import Store from '@/components/Store.vue'
 
 export default {
-  name: 'home',
+  name: 'store',
   components: {
     Store
   }

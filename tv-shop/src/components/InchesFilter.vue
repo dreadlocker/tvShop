@@ -15,7 +15,7 @@ import { mapActions, mapState } from "vuex";
 import { ACTION_TVS_ARR } from "../Vuex/types.js";
 
 export default {
-  name: "BrandFilter",
+  name: "InchesFilter",
   data() {
     return {
       namesArr: [32, 40, 43, 50, 55, 65],

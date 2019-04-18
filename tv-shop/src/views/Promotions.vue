@@ -6,7 +6,7 @@
 import Promotions from '@/components/Promotions.vue'
 
 export default {
-  name: 'home',
+  name: 'promotions',
   components: {
     Promotions
   }

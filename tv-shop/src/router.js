@@ -4,6 +4,8 @@ import Home from './views/Home.vue'
 import Store from './views/Store.vue'
 import Promotions from './views/Promotions.vue'
 import About from './views/About.vue'
+import ErrorPage from './views/ErrorPage.vue'
+import SingleTV from './views/SingleTV.vue'
 
 Vue.use(Router)
 
@@ -30,6 +32,22 @@ export default new Router({
       path: '/about',
       name: 'about',
       component: About
+    },
+    {
+      path: '/tv/:id',
+      name: 'tvID',
+      component: SingleTV
+    },
+    {
+      path: '/404',
+      name: 'errorPage',
+      component: ErrorPage
+    },
+    // FIX da se pra6ta ot BackEnd
+    {
+      path: '*',
+      name: 'toErrorPage',
+      redirect: '/404'
     }
   ]
 })
