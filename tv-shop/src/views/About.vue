@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import About from '@/components/About.vue'
+import About from '@/components/Page/NavRoutes/About.vue'
 
 export default {
   name: 'about',

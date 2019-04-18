@@ -5,7 +5,7 @@
 <script>
 import axios from "axios";
 import { mapState, mapActions } from "vuex";
-import { ACTION_TVS_ARR } from "../Vuex/types.js";
+import { ACTION_TVS_ARR } from "@/Vuex/types.js";
 
 export default {
   name: "PageFromNav",

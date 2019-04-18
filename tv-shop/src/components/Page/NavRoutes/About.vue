@@ -21,12 +21,12 @@ export default {
       contactLinksObj: {
         "Jivko Jelev": [
           "https://www.facebook.com/hankybrat",
-          "mailto:hankybrat1914@gmail.com",
+          "mailto:hankybrat1914.../../../gmail.com",
           "https://join.skype.com/invite/eobptMs9dzg3"
         ],
         "Svetozar Iliev": [
           "https://www.facebook.com/neTbk.13Tu",
-          "mailto:svetozariliev13@gmail.com",
+          "mailto:svetozariliev13.../../../gmail.com",
           "https://join.skype.com/invite/otXS3Vmaa9Aj"
         ]
       }
@@ -50,12 +50,12 @@ export default {
   }
 }
 #fb {
-  content: url("../assets/facebook-logo.png");
+  content: url("../../../assets/facebook-logo.png");
 }
 #gmail {
-  content: url("../assets/gmail-logo.png");
+  content: url("../../../assets/gmail-logo.png");
 }
 #skype {
-  content: url("../assets/skype-icon.png");
+  content: url("../../../assets/skype-icon.png");
 }
 </style>

@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Store from './views/Store.vue'
-import Promotions from './views/Promotions.vue'
+import Promotions from './views/Promotions'
 import About from './views/About.vue'
 import ErrorPage from './views/ErrorPage.vue'
 import SingleTV from './views/SingleTV.vue'
@@ -43,7 +43,6 @@ export default new Router({
       name: 'errorPage',
       component: ErrorPage
     },
-    // FIX da se pra6ta ot BackEnd
     {
       path: '*',
       name: 'toErrorPage',

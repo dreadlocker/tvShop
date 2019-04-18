@@ -3,10 +3,10 @@
 </template>
 
 <script>
-import Promotions from '@/components/Promotions.vue'
+import Promotions from '@/components/Page/NavRoutes/Promotions'
 
 export default {
-  name: 'promotions',
+  name: 'about',
   components: {
     Promotions
   }

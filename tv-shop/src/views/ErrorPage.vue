@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import ErrorPage from '@/components/ErrorPage.vue'
+import ErrorPage from '@/components//Page/NavRoutes/ErrorPage'
 
 export default {
   name: 'errorPage',
