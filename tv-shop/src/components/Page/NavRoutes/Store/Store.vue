@@ -7,9 +7,9 @@
 
 <script>
 import { mapActions, mapState } from "vuex";
-import { ACTION_TVS_ARR } from "../Vuex/types.js";
+import { ACTION_TVS_ARR } from "@/Vuex/types.js";
 import axios from "axios";
-import Filters from "./Filters";
+import Filters from "./Filters/Filters";
 import AllTVs from "./AllTVs";
 
 export default {

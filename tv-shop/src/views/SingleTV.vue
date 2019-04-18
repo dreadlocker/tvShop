@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import SingleTV from '@/components/SingleTV.vue'
+import SingleTV from '@/components/Page/NavRoutes/SingleTV/SingleTV'
 
 export default {
   name: 'tvID',

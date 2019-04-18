@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Nav from "./Nav";
-import PageFromNav from "./PageFromNav";
+import Nav from "./Page/Nav";
+import PageFromNav from "./Page/PageFromNav";
 
 export default {
   name: "Skeleton",

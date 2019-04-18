@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Store from '@/components/Store.vue'
+import Store from '../components/Page/NavRoutes/Store/Store'
 
 export default {
   name: 'store',
