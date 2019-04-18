@@ -1,7 +1,7 @@
 <template>
   <div class="store">
     <Filters/>
-    <SingleTV/>
+    <AllTVs/>
   </div>
 </template>
 
@@ -10,19 +10,19 @@ import { mapActions, mapState } from "vuex";
 import { ACTION_TVS_ARR } from "../Vuex/types.js";
 import axios from "axios";
 import Filters from "./Filters";
-import SingleTV from "./SingleTV";
+import AllTVs from "./AllTVs";
 
 export default {
   name: "Store",
   components: {
     Filters,
-    SingleTV
+    AllTVs
   },
   computed: {
     ...mapState({
       tvs_arr: state => state.tvsArr
     })
-  }
+  },
 };
 </script>
 

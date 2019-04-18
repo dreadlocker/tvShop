@@ -1,8 +1,9 @@
 <template>
   <div class="sideNav">
-    <BrandFilter/>
-    <hr>
-    <InchesFilter/>
+      <BrandFilter/>
+      <hr>
+      <!-- FIX later -->
+      <!-- <InchesFilter/> -->
   </div>
 </template>
 
@@ -22,6 +23,6 @@ export default {
 <style lang="scss" scoped>
 .sideNav {
   width: 7rem;
-  border: 1px solid red;
+  border-right: 2px solid #cdcdcd;
 }
 </style>

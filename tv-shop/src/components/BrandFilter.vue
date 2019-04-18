@@ -2,8 +2,8 @@
   <div>
     <p>МАРКА:</p>
     <hr>
-    <p class="right" v-for="name in namesArr" :key="name">
-      <input v-model="checkedNames" type="checkbox" :value="name">
+    <p class="left" v-for="name in namesArr" :key="name">
+      <input v-model="checkedTvNames" type="checkbox" :value="name">
       {{name}}
     </p>
   </div>
@@ -13,38 +13,47 @@
 import axios from "axios";
 import { mapActions, mapState } from "vuex";
 import { ACTION_TVS_ARR } from "../Vuex/types.js";
+import { ACTION_CHECKED_TV_NAMES } from "../Vuex/types.js";
 
 export default {
   name: "BrandFilter",
   data() {
     return {
       namesArr: ["VORTEX", "NEO", "LG", "SAMSUNG", "SONY", "PHILIPS"],
-      checkedNames: []
+      checkedTvNames: []
     };
   },
   computed: {
     ...mapState({
-      tvs_arr: state => state.tvsArr
+      tvs_arr: state => state.tvsArr,
+      checked_tv_names: state => state.checkedTvNames
     })
   },
   methods: {
     ...mapActions({
-      tvs_arr_action: ACTION_TVS_ARR
+      tvs_arr_action: ACTION_TVS_ARR,
+      checked_tv_action: ACTION_CHECKED_TV_NAMES
     })
   },
   watch: {
-    checkedNames: function(models) {
+    checkedTvNames: function(models) {
+      this.checked_tv_action(models);
       axios
         .post("http://10.10.0.227:5432/tvs", { models })
         .then(response => this.tvs_arr_action(response.data.tvs))
         .catch(error => console.log(error));
+    }
+  },
+  mounted() {
+    if (this.checked_tv_names.length > 0) {
+      this.checkedTvNames = this.checked_tv_names;
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.right {
+.left {
   text-align: left;
 }
 </style>

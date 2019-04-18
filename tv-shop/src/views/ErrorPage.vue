@@ -6,7 +6,7 @@
 import ErrorPage from '@/components/ErrorPage.vue'
 
 export default {
-  name: 'home',
+  name: 'errorPage',
   components: {
     ErrorPage
   }

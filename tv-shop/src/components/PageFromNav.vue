@@ -8,7 +8,7 @@ import { mapState, mapActions } from "vuex";
 import { ACTION_TVS_ARR } from "../Vuex/types.js";
 
 export default {
-  name: "Skeleton",
+  name: "PageFromNav",
   computed: {
     ...mapState({
       tvs_arr: state => state.tvsArr
