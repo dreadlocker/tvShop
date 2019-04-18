@@ -48,4 +48,14 @@ export default {
 img {
   cursor: pointer;
 }
+@media only screen and (max-width: 730px) {
+  .singleTv {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  img {
+    width: 100%;
+  }
+}
 </style>
