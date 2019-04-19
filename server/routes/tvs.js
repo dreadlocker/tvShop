@@ -33,17 +33,6 @@ module.exports = app => {
             .catch(err => console.log(err))
     });
 
-    app.get('/tvs/brands', (req, res) => {
-        
-        Tv.find({})
-        .select('model')
-        .then((brands) => {
-            res.send({
-                brands: brands
-            })
-        });
-    })
-
     app.get('/tv/:id', (req, res) => {
         let id = Number(req.params.id) + 1; // the tv id
         Tv.findOne({
