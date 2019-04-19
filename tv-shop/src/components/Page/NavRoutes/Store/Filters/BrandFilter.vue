@@ -2,7 +2,7 @@
   <div>
     <p>МАРКА:</p>
     <hr>
-    <p class="left" v-for="name in namesArr" :key="name">
+    <p class="left" v-for="name in tvBransdArr" :key="name">
       <input v-model="checkedTvNames" type="checkbox" :value="name">
       {{name}}
     </p>
@@ -13,13 +13,12 @@
 import axios from "axios";
 import { mapActions, mapState } from "vuex";
 import { ACTION_TVS_ARR, ACTION_CHECKED_TV_NAMES } from "@/Vuex/types.js";
-// import { ACTION_TVS_ARR, ACTION_CHECKED_TV_NAMES } from "../../../../../Vuex/types.js";
 
 export default {
   name: "BrandFilter",
   data() {
     return {
-      namesArr: ["VORTEX", "NEO", "LG", "SAMSUNG", "SONY", "PHILIPS"],
+      tvBransdArr: [],
       checkedTvNames: []
     };
   },
@@ -45,9 +44,14 @@ export default {
     }
   },
   mounted() {
-    if (this.checked_tv_names.length > 0) {
-      this.checkedTvNames = this.checked_tv_names;
-    }
+    if (this.checked_tv_names.length > 0) this.checkedTvNames = this.checked_tv_names;
+    
+    const tvBransdArr = [];
+    this.tvs_arr.forEach(tvObj => {
+      const tvBrand = tvObj.model.split(" ")[1];
+      if (!tvBransdArr.includes(tvBrand)) tvBransdArr.push(tvBrand);
+    });
+    this.tvBransdArr = tvBransdArr;
   }
 };
 </script>

@@ -1,20 +1,25 @@
 <template>
-  <div id="tvContainer">
-    <CurrentPageFilter/>
-    <TvWrapper/>
+  <div class="tvWrapper">
+    <div v-for="(tvObj, index) in arr" :key="index" class="singleTv">
+      <h3>{{tvObj.model}}</h3>
+      <img @click="thisTvPage(index)" :src="tvObj.image">
+    </div>
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
-import CurrentPageFilter from "./Filters/CurrentPageFilter";
-import TvWrapper from "./TvWrapper";
 
 export default {
-  name: "AllTVs",
-  components: {
-    CurrentPageFilter,
-    TvWrapper
+  name: "TvWrapper",
+  props: {
+    arrFromChild: Number
+  },
+  data() {
+    return {
+      arr: [],
+      index: 0
+    };
   },
   computed: {
     ...mapState({
@@ -23,8 +28,21 @@ export default {
     })
   },
   mounted() {
-    this.first10tvs = this.tvs_arr.slice(0, this.tv_count_per_page);
+    this.arr = this.tvs_arr.slice(0, this.tv_count_per_page);
   },
+  methods: {
+    thisTvPage(index) {
+      this.$router.push(`tv/${tvID}`); // go to URL tv/:id
+    }
+  },
+  watch: {
+    tv_count_per_page: function(val) {
+      this.arr = this.tvs_arr.slice(0, val);
+    },
+    tvs_arr: function (val) {
+      this.arr = this.tvs_arr.slice(0, this.tv_count_per_page);
+    }
+  }
 };
 </script>
 
