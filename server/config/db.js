@@ -3,6 +3,7 @@ mongoose.Promise = global.Promise;
 
 const uri = 'mongodb://localhost:27017/tvs';
 const Tv = require('../models/tv'); // Initialize model
+const Admin = require('../models/admin'); // Initialize model
 
 mongoose.connect(uri).then(
     () => { 
