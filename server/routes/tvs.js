@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Tv = mongoose.model('Tv');
 let allTvs = [];
+let allBrands = [] 
 
 
 module.exports = app => {
@@ -65,9 +66,12 @@ module.exports = app => {
 
         Tv.find({})
             .limit(counter)
+            .sort({
+                id: 1
+            })
             .then(tv => {
                 res.send({
-                    tv: tv
+                    tvs: tv
                 })
             })
             .catch(err => console.log(err))
