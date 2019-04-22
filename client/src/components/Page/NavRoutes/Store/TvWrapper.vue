@@ -3,6 +3,7 @@
     <div v-for="(tvObj, index) in arrOfTVs" :key="index" class="singleTv">
       <h3>{{tvObj.model}}</h3>
       <img @click="thisTvPage(index)" :src="tvObj.image">
+      <h3>{{tvObj.price}}лв.</h3>
     </div>
   </div>
 </template>
@@ -32,7 +33,6 @@ export default {
   },
   methods: {
     thisTvPage(index) {
-      console.log(index);
       this.$router.push(`tv/${index + 1}`); // go to URL tv/:id
     }
   },

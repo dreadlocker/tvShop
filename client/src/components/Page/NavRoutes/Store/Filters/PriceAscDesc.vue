@@ -1,35 +1,30 @@
 <template>
   <div>
     <span>Сортирай по </span>
-    <select @click="optionClicked" class="sortBy">
-      <option>Цена възходящо</option>
-      <option>Цена низходящо</option>
-      <!-- <option value="10">Цена възходящо</option>
-      <option value="20">Цена низходящо</option> -->
+    <select @click="optionClicked" id="sortBy">
+      <option value="desc">Цена низходящо</option>
+      <option value="asc">Цена възходящо</option>
     </select>
   </div>
 </template>
 
 <script>
-// import { mapActions, mapState } from "vuex";
-// import { ACTION_TV_COUNT_PER_PAGE } from "@/Vuex/types.js";
+import axios from "axios";
+import { mapActions } from "vuex";
+import { ACTION_TVS_ARR } from "@/Vuex/types.js";
 
 export default {
   name: "PriceAscDesc",
-  computed: {
-    // ...mapState({
-    //   tvs_arr: state => state.tvsArr,
-    //   tv_count_per_page: state => state.tvCountPerPage
-    // })
-  },
-  mounted() {
-    // selectEl.value = this.tv_count_per_page;
-  },
   methods: {
-    // ...mapActions({ action_tv_count_per_page: ACTION_TV_COUNT_PER_PAGE }),
-    optionClicked(el) {
-      // const index = Number(el.target.value);
-      // this.action_tv_count_per_page(index);
+    ...mapActions({ action_tvs_arr: ACTION_TVS_ARR }),
+    optionClicked(ev) {
+      axios
+        .get(`http://10.10.0.227:5432/tvs/sortby/${ev.target.value}`)
+        .then(res => {
+          console.log(res.data.tvs);
+// this.action_tvs_arr(res.data.tvs)
+        } )
+        .catch(err => console.log(err));
     }
   }
 };

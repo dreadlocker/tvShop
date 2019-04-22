@@ -10,6 +10,7 @@ export default new Vuex.Store({
     checkedTvNames: [],
     tvCountPerPage: 10,
     tvsBrand: [],
+    tvsSortBy: [],
   },
   mutations: {
     [types.TVS_ARR]: (state, payload) => {
@@ -24,6 +25,9 @@ export default new Vuex.Store({
     [types.TVS_BRAND]: (state, payload) => {
       state.tvsBrand = payload;
     },
+    [types.TVS_SORT_BY]: (state, payload) => {
+      state.tvsSortBy = payload;
+    },
   },
   actions: {
     [types.ACTION_TVS_ARR]({ commit }, payload) {
@@ -37,6 +41,9 @@ export default new Vuex.Store({
     },
     [types.ACTION_TVS_BRAND]({ commit }, payload) {
       commit(types.TVS_BRAND, payload);
+    },
+    [types.ACTION_TVS_SORT_BY]({ commit }, payload) {
+      commit(types.TVS_SORT_BY, payload);
     },
   }
 })

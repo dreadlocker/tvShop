@@ -43,8 +43,6 @@ export default {
   },
   watch: {
     tv_count_per_page: function(val) {
-      console.log(this.tvs_arr);
-      console.log(val);
       this.tvs_arr_action(this.tvs_arr.slice(0, this.tv_count_per_page));
     }
   }

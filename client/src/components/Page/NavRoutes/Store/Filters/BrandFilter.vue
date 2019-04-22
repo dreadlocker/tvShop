@@ -25,7 +25,7 @@ export default {
     ...mapState({
       tvs_arr: state => state.tvsArr,
       checked_tv_names: state => state.checkedTvNames,
-      tvs_brand: state => state.tvsBrand,
+      tvs_brand: state => state.tvsBrand
     })
   },
   mounted() {
@@ -45,7 +45,6 @@ export default {
         .post("http://10.10.0.227:5432/tvs", { models })
         .then(response => this.tvs_arr_action(response.data.tvs))
         .catch(error => console.log(error));
-      console.log(this.tvs_arr);
     }
   }
 };
