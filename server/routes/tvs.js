@@ -1,16 +1,14 @@
 const mongoose = require('mongoose');
 const Tv = mongoose.model('Tv');
 let allTvs = [];
-let allBrands = [] 
+let allBrands = []
 
 
 module.exports = app => {
     app.get('/tvs', (req, res) => {
 
         Tv.find({})
-            .sort({
-                id: 1
-            })
+            .sort('-price')
             .then((tv) => {
                 res.send({
                     tvs: tv
@@ -20,7 +18,7 @@ module.exports = app => {
     });
 
     app.post('/tvs', (req, res) => {
-        let checked = req.body.models.join('|'); 
+        let checked = req.body.models.join('|');
 
         Tv.find({})
             .where('model')
@@ -47,14 +45,13 @@ module.exports = app => {
     })
 
     app.get('/tvs/sortby/:criteria', (req, res) => {
-        let sortParam = req.params.sort; // this must be descending order or ascending 
-        sortParam == 'asc' ? sortParam = 'price' : sortParam = '-price';
+        let sortParam = req.params.criteria; // this must be descending order or ascending 
 
         Tv.find({})
-            .sort(sortParam)
+            .sort({'price' : sortParam})
             .then(tv => {
                 res.send({
-                    tv: tv
+                    tvs: tv
                 })
             })
             .catch(err => console.log(err))
