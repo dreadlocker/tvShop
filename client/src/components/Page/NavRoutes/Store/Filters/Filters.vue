@@ -2,11 +2,7 @@
   <div class="sideNav">
     <BrandFilter/>
     <hr>
-    <!-- FIX later -->
     <InchesFilter/>
-
-
-
     <!-- DA NAPRAVQ TEZI FILTRI SYTRINTA KATO TYK:
       https://techmart.bg/%D0%A2%D0%B5%D0%BB%D0%B5%D0%B2%D0%B8%D0%B7%D0%BE%D1%80%D0%B8
 
@@ -31,7 +27,7 @@ export default {
 
 <style lang="scss" scoped>
 .sideNav {
-  width: 7rem;
+  width: 8rem;
   border-right: 2px solid #cdcdcd;
 }
 </style>
