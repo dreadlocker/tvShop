@@ -1,4 +1,5 @@
-module.exports = [{
+module.exports = [
+  {
     "model": "Телевизор VORTEX LED-32K600",
     "image": "https://cdn.technomarket.bg/../media/cache/my_thumb/uploads/library/product/09169564/5c0f72dd94266.jpg",
     "description": [
@@ -14,7 +15,8 @@ module.exports = [{
       "ДИСТАНЦИОННО УПРАВЛЕНИЕ"
     ],
     "id": 1,
-    "price": "289.00лв."
+    "price": "289.00лв.",
+    "inches": "32"
   },
   {
     "model": "Телевизор NEO LED-4019 FHD",
@@ -30,7 +32,8 @@ module.exports = [{
       "ДИСТАНЦИОННО УПРАВЛЕНИЕ"
     ],
     "id": 2,
-    "price": "499.00лв."
+    "price": "499.00лв.",
+    "inches": "40"
   },
   {
     "model": "Телевизор LG 43UK6200PLA SMART UHD LED TV",
@@ -48,7 +51,8 @@ module.exports = [{
       "HDMI Х 3 , USB Х 2, CI СЛОТ, ДИГИТАЛЕН АУДИО ИЗХОД (OPTICAL)"
     ],
     "id": 3,
-    "price": "629.00лв."
+    "price": "629.00лв.",
+    "inches": "43"
   },
   {
     "model": "Телевизор SAMSUNG UE-50NU7092 UXXH UHD SMART TV",
@@ -64,7 +68,8 @@ module.exports = [{
       "SMART TV HDMI x 2, USB x 1"
     ],
     "id": 4,
-    "price": "799.00лв."
+    "price": "799.00лв.",
+    "inches": "50"
   },
   {
     "model": "Телевизор LG 50UK6750PLD SMART UHD LED TV",
@@ -80,7 +85,8 @@ module.exports = [{
       "DVB-T2/C/S2"
     ],
     "id": 5,
-    "price": "879.00лв."
+    "price": "879.00лв.",
+    "inches": "50"
   },
   {
     "model": "Телевизор SAMSUNG UE-65RU7372 UHD CURVED SMART TV",
@@ -89,7 +95,7 @@ module.exports = [{
       "ТЕХНОЛОГИЯ НА ДИСПЛЕЯ: UHD LED CURVED",
       "РАЗМЕР НА ЕКРАНА 65\" (165 СМ)",
       "РЕЗОЛЮЦИЯ : 4K ULTRA HD 3840 X 2160",
-      "ОПРЕСНЯВАНЕ НА КАРТИНАТА : 150 PQI",
+      "ОПРЕСНЯВАНЕ НА КАРТИНАТА : 1500 PQI",
       "UHD DIMMING, UHD ENGINE",
       "ЦИФРОВ ТУНЕР DVB-T2CS2, WI-FI",
       "SMART TV,  MEGA CONTRAST",
@@ -97,7 +103,8 @@ module.exports = [{
       "ЗВУКОВА МОЩНОСТ 20W 2.0CH"
     ],
     "id": 6,
-    "price": "2299.00лв."
+    "price": "2299.00лв.",
+    "inches": "65"
   },
   {
     "model": "Телевизор SAMSUNG UE-55RU7372 UHD CURVED SMART TV",
@@ -106,7 +113,7 @@ module.exports = [{
       "ТЕХНОЛОГИЯ НА ДИСПЛЕЯ: UHD LED CURVED",
       "РАЗМЕР НА ЕКРАНА 55\" (139 СМ)",
       "РЕЗОЛЮЦИЯ : 4K ULTRA HD 3840 X 2160",
-      "ОПРЕСНЯВАНЕ НА КАРТИНАТА : 150 PQI",
+      "ОПРЕСНЯВАНЕ НА КАРТИНАТА : 1500 PQI",
       "UHD DIMMING, UHD ENGINE",
       "ЦИФРОВ ТУНЕР DVB-T2CS2, WI-FI",
       "SMART TV,  MEGA CONTRAST",
@@ -114,7 +121,8 @@ module.exports = [{
       "ЗВУКОВА МОЩНОСТ 20W 2.0CH"
     ],
     "id": 7,
-    "price": "1499.00лв."
+    "price": "1499.00лв.",
+    "inches": "55"
   },
   {
     "model": "Телевизор TESLA TV 40S317BF",
@@ -131,7 +139,8 @@ module.exports = [{
       "ДИСТАНЦИОННО УПРАВЛЕНИЕ"
     ],
     "id": 8,
-    "price": "399.00лв."
+    "price": "399.00лв.",
+    "inches": "40"
   },
   {
     "model": "Телевизор LG 43UK6470PLC SMART UHD LED TV",
@@ -148,7 +157,8 @@ module.exports = [{
       "DVB-T2/C/S2"
     ],
     "id": 9,
-    "price": "699.00лв."
+    "price": "699.00лв.",
+    "inches": "43"
   },
   {
     "model": "Телевизор LG 55UK6750PLD SMART UHD LED TV",
@@ -164,7 +174,8 @@ module.exports = [{
       "DVB-T2/C/S2"
     ],
     "id": 10,
-    "price": "1099.00лв."
+    "price": "1099.00лв.",
+    "inches": "55"
   },
   {
     "model": "Телевизор PHILIPS 49PUS8503 SMART UHD LED TV",
@@ -182,7 +193,8 @@ module.exports = [{
       "HDMI X4, USB X2, CI ИНТЕРФЕЙС, ЦИФРОВ АУДИО ИЗХОД (ОПТИЧЕН)"
     ],
     "id": 11,
-    "price": "1599.00лв."
+    "price": "1599.00лв.",
+    "inches": "49"
   },
   {
     "model": "Телевизор PHILIPS 65OLED803 OLED TV",
@@ -200,7 +212,8 @@ module.exports = [{
       "DVB-T/T2/T2-HD/C/S/S2"
     ],
     "id": 12,
-    "price": "4499.00лв."
+    "price": "4499.00лв.",
+    "inches": "65"
   },
   {
     "model": "Телевизор NEO LED-50418 UHD SMART WIFI",
@@ -216,7 +229,8 @@ module.exports = [{
       "ДИСТАНЦИОННО УПРАВЛЕНИЕ"
     ],
     "id": 13,
-    "price": "589.00лв."
+    "price": "589.00лв.",
+    "inches": "50"
   },
   {
     "model": "Телевизор LG 65UK6300MLB SMART UHD LED TV",
@@ -235,7 +249,8 @@ module.exports = [{
       "HDMI Х 3 , USB Х 2, CI СЛОТ, ДИГИТАЛЕН АУДИО ИЗХОД (OPTICAL)"
     ],
     "id": 14,
-    "price": "1499.00лв."
+    "price": "1499.00лв.",
+    "inches": "65"
   },
   {
     "model": "Телевизор SAMSUNG QE-55Q7FNATXXH QLED SMART TV",
@@ -254,7 +269,8 @@ module.exports = [{
       "ЗВУК 40W 4.1CH BLUTOOTH AUDIO"
     ],
     "id": 15,
-    "price": "2199.00лв."
+    "price": "2199.00лв.",
+    "inches": "55"
   },
   {
     "model": "Телевизор PHILIPS 55OLED803 OLED TV",
@@ -272,7 +288,8 @@ module.exports = [{
       "DVB-T/T2/T2-HD/C/S/S2"
     ],
     "id": 16,
-    "price": "2799.00лв."
+    "price": "2799.00лв.",
+    "inches": "55"
   },
   {
     "model": "Телевизор SONY KD-55AF8 BAEP SMART UHD OLED TV",
@@ -288,7 +305,8 @@ module.exports = [{
       "HDMI X4, USB X2"
     ],
     "id": 17,
-    "price": "3999.00лв."
+    "price": "3999.00лв.",
+    "inches": "55"
   },
   {
     "model": "Телевизор SONY KD-65AF8 BAEP SMART UHD LED TV",
@@ -304,14 +322,16 @@ module.exports = [{
       "HDMI X4, USB X2"
     ],
     "id": 18,
-    "price": "4999.00лв."
+    "price": "4999.00лв.",
+    "inches": "65"
   },
   {
     "model": "Телевизор PHILIPS 32PHS4203 HD LED TV",
     "image": "https://cdn.technomarket.bg/../media/cache/my_thumb/uploads/library/product/09169695/5c46e60475c63.jpg",
     "description": [],
     "id": 19,
-    "price": "329.00лв."
+    "price": "329.00лв.",
+    "inches": "32"
   },
   {
     "model": "Телевизор PHILIPS 55PUS7503 /12 UHD SMART LED TV",
@@ -331,7 +351,8 @@ module.exports = [{
       "HDMI X4, USB X2, CI ИНТЕРФЕЙС, ЦИФРОВ АУДИО ИЗХОД (ОПТИЧЕН)"
     ],
     "id": 20,
-    "price": "1299.00лв."
+    "price": "1299.00лв.",
+    "inches": "55"
   },
   {
     "model": "Телевизор SAMSUNG UE-55NU8072 TXXH UHD SMART TV",
@@ -350,7 +371,8 @@ module.exports = [{
       "ЗВУК 40 W -2.1CH"
     ],
     "id": 21,
-    "price": "1699.00лв."
+    "price": "1699.00лв.",
+    "inches": "55"
   },
   {
     "model": "Телевизор PHILIPS 55PUS8503 SMART UHD LED TV",
@@ -368,7 +390,8 @@ module.exports = [{
       "HDMI X4, USB X2, CI ИНТЕРФЕЙС, ЦИФРОВ АУДИО ИЗХОД (ОПТИЧЕН)"
     ],
     "id": 22,
-    "price": "1799.00лв."
+    "price": "1799.00лв.",
+    "inches": "55"
   },
   {
     "model": "Телевизор SAMSUNG QE-55Q60R QLED SMART TV",
@@ -386,7 +409,8 @@ module.exports = [{
       "    ЗВУК 20W 2.1 CH"
     ],
     "id": 23,
-    "price": "2199.00лв."
+    "price": "2199.00лв.",
+    "inches": "55"
   },
   {
     "model": "Телевизор SAMSUNG QE-65Q7FNATXXH QLED SMART TV",
@@ -405,7 +429,8 @@ module.exports = [{
       "ЗВУК 40W, 4.1CH BLUTOOTH AUDIO"
     ],
     "id": 24,
-    "price": "3299.00лв."
+    "price": "3299.00лв.",
+    "inches": "65"
   },
   {
     "model": "Телевизор SAMSUNG QE-49Q60R QLED SMART TV",
@@ -423,6 +448,7 @@ module.exports = [{
       "    ЗВУК 20W 2.1 CH"
     ],
     "id": 25,
-    "price": "1859.00лв."
+    "price": "1859.00лв.",
+    "inches": "49"
   }
 ]
