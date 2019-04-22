@@ -25,7 +25,7 @@ export default {
     ...mapState({
       tvs_arr: state => state.tvsArr,
       checked_tv_names: state => state.checkedTvNames,
-      tvs_brand: state => state.tvsBrand,
+      tvs_brand: state => state.tvsBrand.sort(),
       tv_count_per_page: state => state.tvCountPerPage,
       tvs_sort_by: state => state.tvsSortBy,
       checked_tv_inches: state => state.checkedTvInches,

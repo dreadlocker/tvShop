@@ -24,7 +24,7 @@ export default {
   computed: {
     ...mapState({
       tvs_arr: state => state.tvsArr,
-      inches_arr: state => state.inchesArr,
+      inches_arr: state => state.inchesArr.sort((a,b) => b-a),
       checked_tv_names: state => state.checkedTvNames,
       tv_count_per_page: state => state.tvCountPerPage,
       tvs_sort_by: state => state.tvsSortBy,
