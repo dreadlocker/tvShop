@@ -18,11 +18,13 @@ const tvSchema = new mongoose.Schema({
     },
     price: {
         type: Number
+    },
+    inches: {
+        type: String
     }
 });
 
 const Tv = mongoose.model('Tv', tvSchema);
-
 
 Tv.uploadData = async () => {
     try {
@@ -35,7 +37,8 @@ Tv.uploadData = async () => {
                 image: tv.image,
                 description: tv.description,
                 id: tv.id,
-                price: Number(tv.price.split('.')[0])
+                price: Number(tv.price.split('.')[0]),
+                inches: tv.inches
             })
         })
 

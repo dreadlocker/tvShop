@@ -14,59 +14,13 @@ module.exports = app => {
             .catch(err => console.log(err))
     })
 
-    // app.post('/tvs', (req, res) => {
-    //     let checked = req.body.models.join('|');
-
-    //     Tv.find({})
-    //         .where('model')
-    //         .regex(new RegExp(checked, 'i'))
-    //         .sort('-price')
-    //         .then((tvs) => {
-    //             res.send({
-    //                 tvs: tvs
-    //             })
-
-    //         })
-    //         .catch(err => console.log(err))
-
-    // })
-
-    // app.get('/tvs/sortby/:criteria', (req, res) => {
-    //     let sortParam = req.params.criteria; // this must be descending order or ascending 
-
-    //     Tv.find({})
-    //         .sort({'price' : sortParam})
-    //         .then(tv => {
-    //             res.send({
-    //                 tvs: tv
-    //             })
-    //         })
-    //         .catch(err => console.log(err))
-    // })
-
-    // app.get('/tvs/all-tvs-length/:count', (req, res) => {
-    //     let counter = req.params.count; // this must be the number of tvs
-
-    //     Tv.find({})
-    //         .limit(counter)
-    //         .sort({
-    //             id: 1
-    //         })
-    //         .then(tv => {
-    //             res.send({
-    //                 tvs: tv
-    //             })
-    //         })
-    //         .catch(err => console.log(err))
-    // })
-
-
     app.get('/tvs/filters/', (req, res) => {
-        let checked = req.query.models.split(',').join('|');
+        let checked = req.query.models;
         let sorting = req.query.criteria;
         let counter = +req.query.count;
+        let inches = req.query.inches;
 
-        let tvModel = Tv.find({});
+        let tvModel = Tv.find({})
 
         if (checked.length !== 0) {
             tvModel.where('model')
@@ -80,8 +34,13 @@ module.exports = app => {
             tvModel.limit(counter)
                    .sort({id: 1})
         }
+        if(inches.length !== 0){
+            tvModel.where('inches')
+                   .regex(new RegExp(inches, 'i'))
+        }
 
-        tvModel.then(tv => {
+        tvModel
+            .then(tv => {
                 res.send({
                     tvs: tv
                 })
@@ -91,14 +50,13 @@ module.exports = app => {
 
     app.get('/tv/:id', (req, res) => {
         let id = Number(req.params.id) + 1; // the tv id
-        Tv.findOne({
-                id: id
-            })
-            .then(tv => {
+
+        Tv.findOne({id: id})
+          .then(tv => {
                 res.send({
                     tv: tv
                 })
             })
-            .catch(err => console.log(err))
+          .catch(err => console.log(err))
     })
 }
