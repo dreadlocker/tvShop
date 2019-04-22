@@ -2,7 +2,7 @@
   <div>
     <p>МАРКА:</p>
     <hr>
-    <p class="left" v-for="name in tvBransdArr" :key="name">
+    <p class="left" v-for="name in tvs_brand" :key="name">
       <input v-model="checkedTvNames" type="checkbox" :value="name">
       {{name}}
     </p>
@@ -18,15 +18,19 @@ export default {
   name: "BrandFilter",
   data() {
     return {
-      tvBransdArr: [],
       checkedTvNames: []
     };
   },
   computed: {
     ...mapState({
       tvs_arr: state => state.tvsArr,
-      checked_tv_names: state => state.checkedTvNames
+      checked_tv_names: state => state.checkedTvNames,
+      tvs_brand: state => state.tvsBrand,
     })
+  },
+  mounted() {
+    if (this.checked_tv_names.length > 0)
+      this.checkedTvNames = this.checked_tv_names;
   },
   methods: {
     ...mapActions({
@@ -41,17 +45,8 @@ export default {
         .post("http://10.10.0.227:5432/tvs", { models })
         .then(response => this.tvs_arr_action(response.data.tvs))
         .catch(error => console.log(error));
+      console.log(this.tvs_arr);
     }
-  },
-  mounted() {
-    if (this.checked_tv_names.length > 0) this.checkedTvNames = this.checked_tv_names;
-    
-    const tvBransdArr = [];
-    this.tvs_arr.forEach(tvObj => {
-      const tvBrand = tvObj.model.split(" ")[1];
-      if (!tvBransdArr.includes(tvBrand)) tvBransdArr.push(tvBrand);
-    });
-    this.tvBransdArr = tvBransdArr;
   }
 };
 </script>

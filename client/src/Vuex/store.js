@@ -9,6 +9,7 @@ export default new Vuex.Store({
     tvsArr: [],
     checkedTvNames: [],
     tvCountPerPage: 10,
+    tvsBrand: [],
   },
   mutations: {
     [types.TVS_ARR]: (state, payload) => {
@@ -20,6 +21,9 @@ export default new Vuex.Store({
     [types.TV_COUNT_PER_PAGE]: (state, payload) => {
       state.tvCountPerPage = payload;
     },
+    [types.TVS_BRAND]: (state, payload) => {
+      state.tvsBrand = payload;
+    },
   },
   actions: {
     [types.ACTION_TVS_ARR]({ commit }, payload) {
@@ -30,6 +34,9 @@ export default new Vuex.Store({
     },
     [types.ACTION_TV_COUNT_PER_PAGE]({ commit }, payload) {
       commit(types.TV_COUNT_PER_PAGE, payload);
+    },
+    [types.ACTION_TVS_BRAND]({ commit }, payload) {
+      commit(types.TVS_BRAND, payload);
     },
   }
 })
