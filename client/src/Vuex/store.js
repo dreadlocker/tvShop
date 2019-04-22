@@ -9,8 +9,10 @@ export default new Vuex.Store({
     tvsArr: [],
     checkedTvNames: [],
     tvCountPerPage: 10,
+    tvsSortBy: 'desc',
     tvsBrand: [],
-    tvsSortBy: [],
+    inchesArr: [],
+    checkedTvInches: [],
   },
   mutations: {
     [types.TVS_ARR]: (state, payload) => {
@@ -28,6 +30,12 @@ export default new Vuex.Store({
     [types.TVS_SORT_BY]: (state, payload) => {
       state.tvsSortBy = payload;
     },
+    [types.INCHES_ARR]: (state, payload) => {
+      state.inchesArr = payload;
+    },
+    [types.CHECKED_TV_INCHES]: (state, payload) => {
+      state.checkedTvInches = payload;
+    },
   },
   actions: {
     [types.ACTION_TVS_ARR]({ commit }, payload) {
@@ -44,6 +52,12 @@ export default new Vuex.Store({
     },
     [types.ACTION_TVS_SORT_BY]({ commit }, payload) {
       commit(types.TVS_SORT_BY, payload);
+    },
+    [types.ACTION_INCHES_ARR]({ commit }, payload) {
+      commit(types.INCHES_ARR, payload);
+    },
+    [types.ACTION_CHECKED_TV_INCHES]({ commit }, payload) {
+      commit(types.CHECKED_TV_INCHES, payload);
     },
   }
 })

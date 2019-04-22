@@ -19,7 +19,7 @@ export default {
   components: {
     CountOfTVs,
     PriceAscDesc,
-    TvWrapper
+    TvWrapper,
   },
   computed: {
     ...mapState({

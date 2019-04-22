@@ -13,7 +13,7 @@ export default {
   name: "Skeleton",
   components: {
     Nav,
-    PageFromNav
+    PageFromNav,
   }
 };
 </script>

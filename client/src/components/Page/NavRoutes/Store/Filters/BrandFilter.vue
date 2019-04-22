@@ -25,7 +25,10 @@ export default {
     ...mapState({
       tvs_arr: state => state.tvsArr,
       checked_tv_names: state => state.checkedTvNames,
-      tvs_brand: state => state.tvsBrand
+      tvs_brand: state => state.tvsBrand,
+      tv_count_per_page: state => state.tvCountPerPage,
+      tvs_sort_by: state => state.tvsSortBy,
+      checked_tv_inches: state => state.checkedTvInches,
     })
   },
   mounted() {
@@ -42,12 +45,15 @@ export default {
     checkedTvNames: function(models) {
       this.checked_tv_action(models);
       axios
-        .post("http://10.10.0.227:5432/tvs", { models })
-        .then(response => this.tvs_arr_action(response.data.tvs))
+        .get(`http://10.10.0.227:5432/tvs/filters?models=${this.checked_tv_names.join('|')}&criteria=${this.tvs_sort_by}&count=${this.tv_count_per_page}&inches=${this.checked_tv_inches.join('|')}`)
+        .then(response => {
+          this.tvs_arr_action(response.data.tvs)
+        } )
         .catch(error => console.log(error));
     }
   }
 };
+
 </script>
 
 <style lang="scss" scoped>
