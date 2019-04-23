@@ -11,41 +11,33 @@ module.exports = app => {
                     tvs: tv
                 })
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log(err));
     })
 
     app.get('/tvs/filters/', (req, res) => {
-        let checked = req.query.models;
-        let sorting = req.query.criteria;
-        let counter = +req.query.count;
-        let inches = req.query.inches;
+        let { models, criteria, count, inches } = req.query;
 
         let tvModel = Tv.find({})
 
-        if (checked.length !== 0) {
-            tvModel.where('model')
-                   .regex(new RegExp(checked, 'i'))
-                   .sort('-price')
+        if (models.length !== 0) {
+            tvModel.where('model').regex(new RegExp(models, 'i')).sort('-price')
         }
-        if (sorting.length !== 0) {
-            tvModel.sort({'price': sorting})
+        if (criteria.length !== 0) {
+            tvModel.sort({'price': criteria})
         }
-        if (counter !== 0) {
-            tvModel.limit(counter)
-                   .sort({id: 1})
+        if (count !== 0) {
+            tvModel.limit(count).sort({id: 1})
         }
         if(inches.length !== 0){
-            tvModel.where('inches')
-                   .regex(new RegExp(inches, 'i'))
+            tvModel.where('inches').regex(new RegExp(inches, 'i'))
         }
 
-        tvModel
-            .then(tv => {
-                res.send({
-                    tvs: tv
-                })
-            })
-            .catch(err => console.log(err))
+        tvModel.then(tv => {
+                  res.send({
+                     tvs: tv
+                  })
+               })
+               .catch(err => console.log(err));
     })
 
     app.get('/tv/:id', (req, res) => {
@@ -57,6 +49,6 @@ module.exports = app => {
                     tv: tv
                 })
             })
-          .catch(err => console.log(err))
+          .catch(err => console.log(err));
     })
 }
