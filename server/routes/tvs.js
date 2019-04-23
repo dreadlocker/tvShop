@@ -51,4 +51,18 @@ module.exports = app => {
             })
           .catch(err => console.log(err));
     })
+
+    app.get('/tv/bought-tv/:id', (req, res) => {
+        let id = Number(req.params.id); // the tv id
+        
+        Tv.findOne({id: id})
+          .then(tv => {
+            if (tv.isBought) {
+                tv.isBought = false;
+            }else{
+                tv.isBought = true;
+            }
+            tv.save();
+        })
+    })
 }
