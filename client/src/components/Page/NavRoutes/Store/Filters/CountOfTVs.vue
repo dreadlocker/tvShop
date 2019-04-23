@@ -3,8 +3,8 @@
     <span>Брой продукти </span>
     <select @click="optionClicked" id="tvsCount">
       <option>10</option>
-      <option>20</option>
-      <option>30</option>
+      <option>25</option>
+      <option>50</option>
     </select>
   </div>
 </template>

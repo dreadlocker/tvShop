@@ -1,7 +1,7 @@
 <template>
   <div class="singleTV">
     <TvHeader :model="tvObj.model" :image="tvObj.image"/>
-    <TvDescription :descriptionsArr="tvObj.description"/>
+    <TvDescription :tvObj="tvObj"/>
   </div>
 </template>
 
@@ -26,7 +26,7 @@ export default {
     axios
       .get(`http://10.10.0.227:5432/tv/${index}`)
       .then(response => { this.tvObj = response.data.tv })
-      .catch(error => console.log(error));
+      .catch(err => console.log(err));
   }
 };
 </script>

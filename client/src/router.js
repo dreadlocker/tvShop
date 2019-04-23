@@ -4,8 +4,9 @@ import Home from './views/Home.vue'
 import Store from './views/Store.vue'
 import Promotions from './views/Promotions'
 import About from './views/About.vue'
-import ErrorPage from './views/ErrorPage.vue'
+import Cart from './views/Cart.vue'
 import SingleTV from './views/SingleTV.vue'
+import ErrorPage from './views/ErrorPage.vue'
 
 Vue.use(Router)
 
@@ -32,6 +33,11 @@ export default new Router({
       path: '/about',
       name: 'about',
       component: About
+    },
+    {
+      path: '/cart',
+      name: 'cart',
+      component: Cart
     },
     {
       path: '/tv/:id',

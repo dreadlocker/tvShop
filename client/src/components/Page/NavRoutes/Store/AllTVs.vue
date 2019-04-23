@@ -1,7 +1,7 @@
 <template>
   <div id="tvContainer">
     <div id="row">
-      <CountOfTVs/>
+      <CountOfTVs id="CountOfTVs"/>
       <PriceAscDesc/>
     </div>
     <TvWrapper/>
@@ -19,7 +19,7 @@ export default {
   components: {
     CountOfTVs,
     PriceAscDesc,
-    TvWrapper,
+    TvWrapper
   },
   computed: {
     ...mapState({
@@ -43,6 +43,14 @@ export default {
 }
 img {
   cursor: pointer;
+}
+@media only screen and (max-width: 730px) {
+  #row {
+    flex-direction: column;
+  }
+  #CountOfTVs {
+    margin-bottom: 0.5rem;
+  }
 }
 @media only screen and (max-width: 500px) {
   img {

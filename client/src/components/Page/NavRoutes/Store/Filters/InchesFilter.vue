@@ -43,7 +43,7 @@ export default {
       axios
         .get(`http://10.10.0.227:5432/tvs/filters?models=${this.checked_tv_names.join('|')}&criteria=${this.tvs_sort_by}&count=${this.tv_count_per_page}&inches=${this.checked_tv_inches.join('|')}`)
         .then(response => this.tvs_arr_action(response.data.tvs))
-        .catch(error => console.log(error));
+        .catch(err => console.log(err));
     }
   }
 };

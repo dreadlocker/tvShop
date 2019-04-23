@@ -63,7 +63,8 @@ export default {
   width: 32%;
 
   &:hover {
-    transform: scale(0.9);
+    box-shadow: 5px 5px black;
+    border-radius: 5%;
   }
 }
 h3 {
@@ -72,13 +73,13 @@ h3 {
 img {
   cursor: pointer;
 }
-@media only screen and (max-width: 730px) {
-  .singleTv {
-    width: 100%;
+@media only screen and (max-width: 900px) {
+  img {
+    width: 90%;
   }
 }
-@media only screen and (max-width: 500px) {
-  img {
+@media only screen and (max-width: 730px) {
+  .singleTv {
     width: 100%;
   }
 }

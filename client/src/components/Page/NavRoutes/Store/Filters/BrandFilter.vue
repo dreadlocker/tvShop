@@ -49,7 +49,7 @@ export default {
         .then(response => {
           this.tvs_arr_action(response.data.tvs)
         } )
-        .catch(error => console.log(error));
+        .catch(err => console.log(err));
     }
   }
 };

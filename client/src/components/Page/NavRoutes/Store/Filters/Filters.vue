@@ -1,4 +1,5 @@
 <template>
+  <!-- FIX da stava na hambyrger menu za telefoni -->
   <div class="sideNav">
     <BrandFilter/>
     <hr>

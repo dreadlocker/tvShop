@@ -13,6 +13,7 @@ export default new Vuex.Store({
     tvsBrand: [],
     inchesArr: [],
     checkedTvInches: [],
+    boughtTVs: [],
   },
   mutations: {
     [types.TVS_ARR]: (state, payload) => {
@@ -36,6 +37,9 @@ export default new Vuex.Store({
     [types.CHECKED_TV_INCHES]: (state, payload) => {
       state.checkedTvInches = payload;
     },
+    [types.BOUGHT_TVS]: (state, payload) => {
+      state.boughtTVs.push(payload);
+    },
   },
   actions: {
     [types.ACTION_TVS_ARR]({ commit }, payload) {
@@ -58,6 +62,9 @@ export default new Vuex.Store({
     },
     [types.ACTION_CHECKED_TV_INCHES]({ commit }, payload) {
       commit(types.CHECKED_TV_INCHES, payload);
+    },
+    [types.ACTION_BOUGHT_TVS]({ commit }, payload) {
+      commit(types.BOUGHT_TVS, payload);
     },
   }
 })
