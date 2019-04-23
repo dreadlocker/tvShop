@@ -30,3 +30,9 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.singleTV {
+  margin: 0.5rem;
+}
+</style>

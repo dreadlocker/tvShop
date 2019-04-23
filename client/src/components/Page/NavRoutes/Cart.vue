@@ -87,4 +87,9 @@ h2 {
   cursor: pointer;
   margin-right: 0.5rem;
 }
+@media only screen and (max-width: 730px) {
+  #tvsWrapper {
+    flex-direction: column;
+  }
+}
 </style>
