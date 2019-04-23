@@ -21,6 +21,9 @@ const tvSchema = new mongoose.Schema({
     },
     inches: {
         type: String
+    },
+    isBought: {
+        type: Boolean
     }
 });
 
@@ -38,7 +41,8 @@ Tv.uploadData = async () => {
                 description: tv.description,
                 id: tv.id,
                 price: Number(tv.price.split('.')[0]),
-                inches: tv.inches
+                inches: tv.inches,
+                isBought: false
             })
         })
 
