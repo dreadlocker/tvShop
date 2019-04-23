@@ -3,12 +3,6 @@
     <BrandFilter/>
     <hr>
     <InchesFilter/>
-    <!-- DA NAPRAVQ TEZI FILTRI SYTRINTA KATO TYK:
-      https://techmart.bg/%D0%A2%D0%B5%D0%BB%D0%B5%D0%B2%D0%B8%D0%B7%D0%BE%D1%80%D0%B8
-
-      ВИД НА ДИСПЛЕЯ
-      LED (2)
-    -->
   </div>
 </template>
 

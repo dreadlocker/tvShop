@@ -2,7 +2,7 @@
   <div class="tvWrapper">
     <div v-for="(tvObj, index) in arrOfTVs" :key="index" class="singleTv">
       <h3>{{tvObj.model}}</h3>
-      <img @click="thisTvPage(index)" :src="tvObj.image">
+      <img @click="thisTvPage" :src="tvObj.image" :data-id="tvObj.id">
       <h3>{{tvObj.price}}лв.</h3>
     </div>
   </div>
@@ -32,8 +32,9 @@ export default {
     this.arrOfTVs = this.tvs_arr.slice(0, this.tv_count_per_page);
   },
   methods: {
-    thisTvPage(index) {
-      this.$router.push(`tv/${index + 1}`); // go to URL tv/:id
+    thisTvPage() {
+      const id = event.target.dataset.id;
+      this.$router.push(`tv/${id}`); // go to URL tv/:id
     }
   },
   watch: {
