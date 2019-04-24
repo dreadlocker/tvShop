@@ -48,6 +48,7 @@ export default {
 <style lang="scss" scoped>
 img {
   animation: showHideImage 2000ms infinite;
+  width: 20rem;
 }
 @keyframes showHideImage {
   0% {
