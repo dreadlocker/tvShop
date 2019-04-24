@@ -40,6 +40,7 @@ export default {
 #row {
   display: flex;
   justify-content: space-evenly;
+  margin-bottom: 1rem;
 }
 img {
   cursor: pointer;
