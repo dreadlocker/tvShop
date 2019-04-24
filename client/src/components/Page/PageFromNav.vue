@@ -33,19 +33,17 @@ export default {
     axios
       .get("http://10.10.0.227:5432/tvs")
       .then(res => {
-        const tvImagesArr = res.data.tvs.map(tvObj => tvObj.image);
-        this.action_tv_images_arr(tvImagesArr);
-
-        this.action_tvs_arr(res.data.tvs);
-        
-        const [brands, inches] = [[],[]];
-        res.data.tvs.map(brandObj => {
-           brands.push(brandObj.model.split(/\s+/gi)[1])
-           inches.push(brandObj.inches);
+        const [brandsArr, inchesArr, tvImagesArr] = [[], [], []];
+        res.data.tvs.map(tvObj => {
+           brandsArr.push(tvObj.model.split(/\s+/gi)[1])
+           inchesArr.push(tvObj.inches);
+           tvImagesArr.push(tvObj.image);
         });
 
-        this.action_tvs_brand([...new Set(brands)]);
-        this.action_inches_arr([...new Set(inches)]);
+        this.action_tvs_brand([...new Set(brandsArr)]);
+        this.action_inches_arr([...new Set(inchesArr)]);
+        this.action_tv_images_arr(tvImagesArr);
+        this.action_tvs_arr(res.data.tvs);
       })
       .catch(err => console.log(err));
   }

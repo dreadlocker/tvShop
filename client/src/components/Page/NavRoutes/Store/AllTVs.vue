@@ -1,6 +1,6 @@
 <template>
   <div id="tvContainer">
-    <div id="row">
+    <div v-if="tvs_arr.length > 0" id="row">
       <CountOfTVs id="CountOfTVs"/>
       <PriceAscDesc/>
     </div>
