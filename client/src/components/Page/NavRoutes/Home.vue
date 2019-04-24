@@ -22,17 +22,17 @@ export default {
   },
   computed: {
     ...mapState({
-      tvs_arr: state => state.tvsArr
+      tv_images_arr: state => state.tvImagesArr,
     })
   },
   methods: {
     renderAnimation() {
-      this.randomIndex = Math.round(Math.random() * (this.tvs_arr.length - 1));
-      this.src = this.tvs_arr[this.randomIndex].image;
+      this.randomIndex = Math.round(Math.random() * (this.tv_images_arr.length - 1));
+      this.src = this.tv_images_arr[this.randomIndex];
       
       this.interval = setInterval(() => {
-        this.randomIndex = Math.round(Math.random() * (this.tvs_arr.length - 1));
-        this.src = this.tvs_arr[this.randomIndex].image;
+        this.randomIndex = Math.round(Math.random() * (this.tv_images_arr.length - 1));
+        this.src = this.tv_images_arr[this.randomIndex];
       }, 2000);
     }
   },

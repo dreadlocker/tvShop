@@ -64,7 +64,7 @@ export default {
   width: 32%;
 
   &:hover {
-    box-shadow: 5px 5px black;
+    box-shadow: 5px 5px #42b983;
     border-radius: 5%;
   }
 }

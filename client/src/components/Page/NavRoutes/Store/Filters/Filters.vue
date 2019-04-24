@@ -24,5 +24,6 @@ export default {
 .sideNav {
   width: 8rem;
   border-right: 2px solid #cdcdcd;
+  margin-left: 0.5rem;
 }
 </style>

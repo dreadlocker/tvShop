@@ -7,6 +7,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     tvsArr: [],
+    tvImagesArr: [],
     checkedTvNames: [],
     tvCountPerPage: 10,
     tvsSortBy: 'desc',
@@ -18,6 +19,9 @@ export default new Vuex.Store({
   mutations: {
     [types.TVS_ARR]: (state, payload) => {
       state.tvsArr = payload;
+    },
+    [types.TV_IMAGES_ARR]: (state, payload) => {
+      state.tvImagesArr = payload;
     },
     [types.CHECKED_TV_NAMES]: (state, payload) => {
       state.checkedTvNames = payload;
@@ -44,6 +48,9 @@ export default new Vuex.Store({
   actions: {
     [types.ACTION_TVS_ARR]({ commit }, payload) {
       commit(types.TVS_ARR, payload);
+    },
+    [types.ACTION_TV_IMAGES_ARR]({ commit }, payload) {
+      commit(types.TV_IMAGES_ARR, payload);
     },
     [types.ACTION_CHECKED_TV_NAMES]({ commit }, payload) {
       commit(types.CHECKED_TV_NAMES, payload);

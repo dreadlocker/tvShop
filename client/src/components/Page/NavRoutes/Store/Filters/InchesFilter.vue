@@ -41,11 +41,7 @@ export default {
     checkedInches: function(inches) {
       this.action_checked_tv_inches(inches);
       axios
-        .get(`http://10.10.0.227:5432/tvs/filters?
-          models=${this.checked_tv_names.join('|')}&c
-          riteria=${this.tvs_sort_by}&
-          count=${this.tv_count_per_page}&
-          inches=${this.checked_tv_inches.join('|')}`)
+        .get(`http://10.10.0.227:5432/tvs/filters?models=${this.checked_tv_names.join('|')}&criteria=${this.tvs_sort_by}&count=${this.tv_count_per_page}&inches=${this.checked_tv_inches.join('|')}`)
         .then(response => this.tvs_arr_action(response.data.tvs))
         .catch(err => console.log(err));
     }

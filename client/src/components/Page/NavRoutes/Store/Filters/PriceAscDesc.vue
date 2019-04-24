@@ -31,14 +31,17 @@ export default {
     optionClicked(ev) {
       this.action_tvs_sort_by(ev.target.value);
       axios
-        .get(`http://10.10.0.227:5432/tvs/filters?
-          models=${this.checked_tv_names.join('|')}&
-          criteria=${ev.target.value}&
-          count=${this.tv_count_per_page}&
-          inches=${this.checked_tv_inches}`)
+        .get(`http://10.10.0.227:5432/tvs/filters?models=${this.checked_tv_names.join('|')}&criteria=${ev.target.value}&count=${this.tv_count_per_page}&inches=${this.checked_tv_inches}`)
         .then(res => this.tvs_arr_action(res.data.tvs))
         .catch(err => console.log(err));
     }
   }
 };
 </script>
+
+<style lang="scss" scoped>
+#sortBy {
+  background-color: #42b983;
+  color: white;
+}
+</style>
