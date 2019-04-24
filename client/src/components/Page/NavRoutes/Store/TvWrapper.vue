@@ -1,5 +1,6 @@
 <template>
   <div class="tvWrapper">
+    <h1 v-if="arrOfTVs.length === 0" id="noTV">No TVs to show given the current filters.</h1>
     <div v-for="(tvObj, index) in arrOfTVs" :key="index" class="singleTv">
       <h3>{{tvObj.model}}</h3>
       <img @click="thisTvPage" :src="tvObj.image" :data-id="tvObj.id">

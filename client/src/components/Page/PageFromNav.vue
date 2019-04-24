@@ -1,5 +1,6 @@
 <template>
-  <router-view v-if="tvs_arr.length > 0"/>
+  <router-view/>
+  <!-- <router-view v-if="tvs_arr.length > 0"/> -->
 </template>
 
 <script>

@@ -27,7 +27,8 @@ export default {
       tvs_arr: state => state.tvsArr,
       tv_count_per_page: state => state.tvCountPerPage,
       checked_tv_names: state => state.checkedTvNames,
-      tvs_sort_by: state => state.tvsSortBy
+      tvs_sort_by: state => state.tvsSortBy,
+      checked_tv_inches: state => state.checkedTvInches,
     })
   },
   mounted() {
@@ -43,7 +44,11 @@ export default {
       this.action_tv_count_per_page(index);
 
       axios
-        .get(`http://10.10.0.227:5432/tvs/filters?models=${this.checked_tv_names.join('|')}&criteria=${this.tvs_sort_by}&count=${this.tv_count_per_page}&inches=`)
+        .get(`http://10.10.0.227:5432/tvs/filters?
+          models=${this.checked_tv_names.join('|')}&
+          criteria=${this.tvs_sort_by}&
+          count=${this.tv_count_per_page}&
+          inches=${this.checked_tv_inches}`)
         .then(res => this.tvs_arr_action(res.data.tvs))
         .catch(err => console.log(err));
     }
