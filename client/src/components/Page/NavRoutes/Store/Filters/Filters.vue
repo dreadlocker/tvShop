@@ -1,5 +1,5 @@
 <template>
-  <!-- FIX da stava na hambyrger menu za telefoni -->
+  <!-- FIX da stava na hambyrger menu za telefoni @media na max-width: 500px -->
   <div class="sideNav">
     <BrandFilter/>
     <hr>
