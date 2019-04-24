@@ -23,13 +23,16 @@ export default {
   },
   computed: {
     ...mapState({
-      tvs_arr: state => state.tvsArr,
       inches_arr: state => state.inchesArr.sort((a,b) => b-a),
       checked_tv_names: state => state.checkedTvNames,
       tv_count_per_page: state => state.tvCountPerPage,
       tvs_sort_by: state => state.tvsSortBy,
       checked_tv_inches: state => state.checkedTvInches,
     })
+  },
+  mounted() {
+    if (this.checked_tv_inches.length > 0)
+      this.checkedInches = this.checked_tv_inches;
   },
   methods: {
     ...mapActions({
