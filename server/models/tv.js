@@ -11,19 +11,24 @@ const tvSchema = new mongoose.Schema({
         required: true
     },
     description: {
-        type: Array
+        type: Array,
+        required: true
     },
     id: {
         type: Number,
+        required: true
     },
     price: {
-        type: Number
+        type: Number,
+        required: true
     },
     inches: {
-        type: String
+        type: String,
+        required: true
     },
     isBought: {
-        type: Boolean
+        type: Boolean,
+        required: true
     }
 });
 
