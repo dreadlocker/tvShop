@@ -1,7 +1,9 @@
+const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const keys = require('../config/keys');
 const passport = require('passport');
+const Tv = mongoose.model('Tv');
 
 // Load Input Validation
 const validateRegisterInput = require('../validation/register');
@@ -103,6 +105,33 @@ module.exports = app => {
         });
     });
 
+    app.get('/adminPanel', passport.authenticate('jwt', { session: false }), (req,res) => {
+        Tv.find({})
+          .sort({'price': -1})
+          .then(tvs => {
+            res.send({
+                tvs: tvs
+            })
+        })
+    })
+
+    app.post('/adminPanel/', passport.authenticate('jwt', { session: false }), (req,res) => {
+
+        let id = req.body.id; // the tv id
+
+        Tv.findOneAndRemove({ id : id})
+          .then(tvs => {
+              tvs.save();
+              Tv.find({})
+                .sort({'price': -1})
+                .then(tvs => {
+                    res.send({
+                        tvs: tvs
+                    })
+                })
+          })
+    })
+
     app.get(
         '/current',
         passport.authenticate('jwt', {
@@ -115,5 +144,4 @@ module.exports = app => {
             });
         }
     );
-
 }
