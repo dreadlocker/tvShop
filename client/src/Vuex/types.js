@@ -7,6 +7,7 @@ export const TVS_SORT_BY = "store/TVS_SORT_BY";
 export const INCHES_ARR = "store/INCHES_ARR";
 export const CHECKED_TV_INCHES = "store/CHECKED_TV_INCHES";
 export const BOUGHT_TVS = "store/BOUGHT_TVS";
+export const IS_LOGGED = "store/IS_LOGGED";
 
 
 
@@ -19,3 +20,4 @@ export const ACTION_TVS_SORT_BY = "store/ACTION_TVS_SORT_BY";
 export const ACTION_INCHES_ARR = "store/ACTION_INCHES_ARR";
 export const ACTION_CHECKED_TV_INCHES = "store/ACTION_CHECKED_TV_INCHES";
 export const ACTION_BOUGHT_TVS = "store/ACTION_BOUGHT_TVS";
+export const ACTION_IS_LOGGED = "store/ACTION_IS_LOGGED";

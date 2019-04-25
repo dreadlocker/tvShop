@@ -1,23 +1,36 @@
 <template>
   <div id="nav">
-    <router-link to="/">HOME</router-link> |
-    <router-link to="/store">STORE</router-link> |
-    <router-link to="/promotions">PROMOTIONS</router-link> |
-    <router-link to="/about">ABOUT</router-link>
+    <router-link to="/">HOME</router-link>|
+    <router-link to="/store">STORE</router-link>|
+    <router-link to="/promotions">PROMOTIONS</router-link>|
+    <router-link to="/about">ABOUT</router-link>|
+    <router-link to="/" v-show="is_logged"><span @click="logout">LOGOUT</span></router-link>
     <router-link to="/cart" id="cartNav"></router-link>
     <div v-if="bought_TVs.length > 0" id="boughtItemsCount">{{bought_TVs.length}}</div>
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
+import { ACTION_IS_LOGGED } from "@/Vuex/types.js";
 
 export default {
   name: "Nav",
   computed: {
     ...mapState({
-      bought_TVs: state => state.boughtTVs
+      bought_TVs: state => state.boughtTVs,
+      is_logged: state => state.isLogged
     })
+  },
+  methods: {
+    ...mapActions({
+      action_is_logged: ACTION_IS_LOGGED
+    }),
+    logout() {
+      this.$router.push("/");
+      this.action_is_logged(false);
+      localStorage.clear();
+    }
   }
 };
 </script>

@@ -7,6 +7,8 @@ import About from './views/About.vue'
 import Cart from './views/Cart.vue'
 import SingleTV from './views/SingleTV.vue'
 import ErrorPage from './views/ErrorPage.vue'
+import Login from './views/Login.vue'
+import AdminPanel from './views/AdminPanel.vue'
 
 Vue.use(Router)
 
@@ -45,14 +47,24 @@ export default new Router({
       component: SingleTV
     },
     {
+      path: '/login',
+      name: 'login',
+      component: Login
+    },
+    {
+      path: '/adminPanel',
+      name: 'adminPanel',
+      component: AdminPanel
+    },
+    {
       path: '/404',
       name: 'errorPage',
       component: ErrorPage
     },
-    {
-      path: '*',
-      name: 'toErrorPage',
-      redirect: '/404'
-    }
+    // {
+      // path: '*',
+      // name: 'toErrorPage',
+      // redirect: '/404'
+    // }
   ]
 })

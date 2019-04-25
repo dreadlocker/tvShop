@@ -1,11 +1,13 @@
 <template>
   <div class="store">
-    <Filters/>
+    <!-- <Filters/> -->
+    <HamburgetMenu/>
     <AllTVs/>
   </div>
 </template>
 
 <script>
+import HamburgetMenu from "../../HamburgetMenu";
 import { mapActions, mapState } from "vuex";
 import { ACTION_TVS_ARR } from "@/Vuex/types.js";
 import axios from "axios";
@@ -16,7 +18,8 @@ export default {
   name: "Store",
   components: {
     Filters,
-    AllTVs
+    HamburgetMenu,
+    AllTVs,
   },
   computed: {
     ...mapState({
@@ -29,6 +32,7 @@ export default {
 <style lang="scss" scoped>
 .store {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
 </style>

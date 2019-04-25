@@ -1,4 +1,5 @@
 <template>
+<!-- FIX snimkata e skrita zaradi 4erniq background, razmera na krug4eto ne e ok -->
   <div class="cart">
     <h1 v-if="bought_TVs.length === 0">Your cart is empty.</h1>
     <div v-else v-for="(tvObj, index) in bought_TVs" :key="index" id="tvsWrapper">
@@ -16,8 +17,8 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
 import axios from "axios";
+import { mapState } from "vuex";
 
 export default {
   name: "Cart",
@@ -69,6 +70,7 @@ export default {
 }
 img {
   width: 7rem;
+  margin-left: 0.5rem;
 }
 h2 {
   margin-right: 1rem;

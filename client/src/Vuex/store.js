@@ -15,6 +15,7 @@ export default new Vuex.Store({
     inchesArr: [],
     checkedTvInches: [],
     boughtTVs: [],
+    isLogged: false,
   },
   mutations: {
     [types.TVS_ARR]: (state, payload) => {
@@ -44,6 +45,9 @@ export default new Vuex.Store({
     [types.BOUGHT_TVS]: (state, payload) => {
       state.boughtTVs.push(payload);
     },
+    [types.IS_LOGGED]: (state, payload) => {
+      state.isLogged = payload;
+    },
   },
   actions: {
     [types.ACTION_TVS_ARR]({ commit }, payload) {
@@ -72,6 +76,9 @@ export default new Vuex.Store({
     },
     [types.ACTION_BOUGHT_TVS]({ commit }, payload) {
       commit(types.BOUGHT_TVS, payload);
+    },
+    [types.ACTION_IS_LOGGED]({ commit }, payload) {
+      commit(types.IS_LOGGED, payload);
     },
   }
 })
